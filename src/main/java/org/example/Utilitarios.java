@@ -12,7 +12,7 @@ public class Utilitarios {
     public static void fecharPools(ExecutorService workers,ScheduledExecutorService scheduledWorkers,AtomicInteger valorTotalVoos, List<Integer> quantidadePassagensCompradas){
         workers.shutdown();
         try {
-            if (!workers.awaitTermination(5, TimeUnit.SECONDS)){
+            if (!workers.awaitTermination(1, TimeUnit.SECONDS)){
                 workers.shutdownNow();
             }
             scheduledWorkers.shutdownNow();
